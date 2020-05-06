@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+	<title>Либрария</title>
+	<meta charset="utf-8" name="viewport" lang="en" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="../../../img/logo.jpg">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../../../style/style.css">
+	<script src="../../../script/script.js"></script>
+	<style>
+		#intoModal{ margin-left:auto; margin-right:auto; }
+		
+		#addYourName,#addYourLastName,#endDate,#phone{
+			border:2px solid rgba(0,0,0,0.05);
+			outline:none;
+			padding-left:10px;
+			margin:15px 0 0 0;
+		}
+		#addYourName{ margin-top:60px; }
+		#endDate{ margin-bottom:20px; }
+		
+		@media all and (max-width:1700px){
+			#addVistiorBut{ margin-left:80%; }
+		}
+		@media all and (max-width:1000px){
+			#addVistiorBut{ margin:50px 0 10px 40%; }
+		}
+		@media all and (max-width:700px){
+			table{ margin-left:10%; }
+			#addVistiorBut{ margin:50px 0 10px 10%; }
+		}
+	</style>
+</head>
+<body>
+	<header id="pageHead">
+		<h3><em>Либрария</em></h3>
+		<ul id="navMenu">
+			<li><a href="../ro.html">Principal</a></li>
+			<li><a href="#">Visitorii</a></li>
+			<li><a href="cards.html">Carde</a></li>
+			<li><a href="statistic.html">Statistica</a></li>
+		</ul>
+		<form name="f1">
+			<i class="fa fa-bars" name="navBars" id="navBars" onclick="showNavBars()"></i>
+			<select id="langChange" onchange="location = this.value;">
+				<option value="#">RO</option>
+				<option value="../../../navigation/visitors.html">EN</option>
+				<option value="../../ru/navigation/visitors.html">RU</option>
+			</select>
+		</form>
+		<script>
+			function addVistiorMod(){ modal.style.display = "block"; }
+			function addNewCard(){ 
+				//create table row
+				var tableRow = document.createElement("tr");
+				table.appendChild(tableRow);
+				
+				//add standart cell td
+				var tableId = document.createElement("td");
+				var tableVisitor = document.createElement("td");
+				var tablePhone = document.createElement("td");
+				var tableEdit = document.createElement("td");
+				
+				tableId.setAttribute("id", "name");
+				tableVisitor.setAttribute("id", "lName");
+				tablePhone.setAttribute("id", "bookName");
+				tablePhone.setAttribute("id", "edit");
+				
+				tableId.innerText = addYourName.value;
+				tableVisitor.innerText = addYourLastName.value;
+				tablePhone.innerText = phone.value;
+				tableEdit.innerText = "Schimbă";
+				
+				tableRow.appendChild(tableId);
+				tableRow.appendChild(tableVisitor);
+				tableRow.appendChild(tablePhone);
+				tableRow.appendChild(tableEdit);
+				//close it
+				modal.style.display = "none";
+			}
+		</script>
+	</header>
+	<article id="mainArticle">
+		<form name="f2">
+			<input type="button" name="addVistiorBut" id="addVistiorBut" value="Visitorul nou" onclick="addVistiorMod()">
+			<div id="modal">
+				<div id="intoModal" align="center">
+					<i class="fa fa-close" id="closeModal" onclick="closeModal()"></i><br>
+					<input type="text" placeholder="Numele dvs" name="addYourName" id="addYourName"><br>
+					<input type="text" placeholder="Prenumele dvs" name="addYourLastName" id="addYourLastName"><br>
+					<input type="text" placeholder="Număr" name="phone" id="phone"><br>
+					<input type="button" value="Adaugă" id="addModal" onclick="addNewCard()">
+				</div>
+			</div>
+		</form>
+		<table border="1px solid black" align="center" id="table">
+			<tr>
+				<th>ID</th>
+				<th>Nume</th>
+				<th>Număr</th>
+				<th>Schimbă</th>
+			</tr>
+			<tr>
+				<td>Nikita</td>
+				<td>Kravcenko</td>
+				<td>079352217</td>
+				<td>Schimbă</td>
+			</tr>
+			<tr>
+				<td>Anton</td>
+				<td>Valuev</td>
+				<td>079352217</td>
+				<td>Schimbă</td>
+			</tr>
+			<tr>
+				<td>Andrei</td>
+				<td>Conovalov</td>
+				<td>079352217</td>
+				<td>Schimbă</td>
+			</tr>
+			<tr>
+				<td>Irina</td>
+				<td>Pascari</td>
+				<td>079352217</td>
+				<td>Schimbă</td>
+			</tr>
+		</table>
+	</article>
+	<footer id="pageFooter" align="center"><br>&copy Kravcenko Nikita<hr width="20%" color="black"></footer>
+</body>
+</html>
