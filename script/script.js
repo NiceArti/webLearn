@@ -44,6 +44,11 @@
 		//open modal when button is clicked
 		function addItem(){ modal.style.display = "block"; }
 		
+		function loadFile(evt)
+		{
+			console.log(evt.value);
+		}
+		
 		//add new book when modal is complete
 		function addNewBook(){
 			//create block
@@ -64,6 +69,7 @@
 			var _image = document.createElement('img');
 			_image.setAttribute("class", "output");
 			_image.src = addImage.value;
+			loadFile(_image);
 			newBook.appendChild(_image);
 			
 			//put author name in block

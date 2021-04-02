@@ -58,7 +58,7 @@
 				<div id="modal">
 					<div id="intoModal">
 						<i class="fa fa-close" id="closeModal" onclick="closeModal()"></i><br>
-						<input type="file" value="add image for book" accept="image/*" name="addImage" id="addImage" onchange="loadFile(event)">
+						<input type="file" value="add image for book" accept=".jpg, .jpeg, .png" name="addImage" id="addImage" onchange="loadFile(event)" multiple><!--accept="image/*"-->
 						<label for="addImage" id="addImageLabel">add image for book</label><br>
 						<input type="text" placeholder="Author name" name="addAuthorName" id="addAuthorName"><br>
 						<input type="text" placeholder="Book name" name="addBookName" id="addBookName"><br>
