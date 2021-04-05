@@ -1,3 +1,7 @@
+
+*{
+  transition:0.5s ease;
+}
 /* @extend display-flex; */
 display-flex, .display-flex, .display-flex-center, .signup-content, .signin-content, .social-login, .socials {
   display: flex;
@@ -254,8 +258,39 @@ body {
 
 .signup {
   margin-bottom: 150px; 
- 
+  
  }
+.main
+{
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+}
+
+.main:hover
+{
+
+  transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+}
+
+ .signup, .sign-in{
+  position:absolute;
+ }
+
+.signup{
+  transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+}
+.sign-in
+{
+  transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+}
+
  
 .signup-content {
   padding: 75px 0; }
@@ -264,7 +299,7 @@ body {
   width: 50%;
   overflow: hidden; }
 
-Where the world builds software
+/*Where the world builds software
 Millions of developers and companies build, ship, and maintain their software on GitHub—the largest and most advanced development platform in the world.
 
 Email address
@@ -279,10 +314,9 @@ Organizations
 Repositories
 
 72%
-Fortune 50
+Fortune 50*/
 
-.signup-image {
-  margin: 0 55px; }
+.signup-image { margin: 0 55px; }
 
 .form-title {
   margin-bottom: 33px; }
