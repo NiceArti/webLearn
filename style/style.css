@@ -1,7 +1,9 @@
 		#pageHead{ grid-area: header; }
 		#pageFooter{ grid-area: footer; }
-		#pageArticle{ grid-area: article; }
+		#pageArticle{ grid-area: article;}
 		
+		#mainArticle{height: auto;}
+
 		body{
 			margin:0;
 			background:#F7F7F7;
@@ -10,9 +12,9 @@
 			grid-template-rows:25px 1fr 100px;
 			grid-template-columns:1fr;
 			grid-gap:10px;
-			height:100vh; <!--высота относительно viewport-->
+			height:100vh;
 		}
-		
+		/*footer*/
 		header{
 			z-index:2;
 			background:#e5e5e5;
@@ -194,8 +196,14 @@
 			}
 		}
 		
-		@media all and (max-width:1000px){
-			header li a,#searchBar,header h3, #pageFooter{
+		@media all and (max-width:1000px)
+		{
+			#pageFooter
+			{
+				position: relative;
+			}
+			footer hr{width:40%;}
+			header li a,#searchBar,header h3{
 				display:none;
 			}
 			#content{ width:40em; }
@@ -247,6 +255,11 @@
 		}
 		@media all and (max-width:650px){
 			#content{ width:20em; }
+			footer hr {width:50%;}
+		}
+		@media all and (max-width:400px){
+			#content{ width:20em; }
+			footer hr {width:70%;}
 		}
 		#modal{
 			z-index:3;
@@ -320,3 +333,9 @@
 			border:1px dashed rgba(0,0,0,0.1);
 			color:rgba(0,0,0,0.4);
 		}
+
+footer
+{
+    text-align: center;
+    justify-content: center;
+}

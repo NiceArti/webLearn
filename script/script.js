@@ -48,14 +48,14 @@
 		{
 			console.log(evt.value);
 		}
-		
+
 		//add new book when modal is complete
 		function addNewBook(){
 			//create block
 			var newBook = document.createElement("div");
 			newBook.setAttribute("class", "books");
 			content.appendChild(newBook);
-			
+
 			//add image	
 			/*var image = document.createElement('img');
 			image.setAttribute("id", "output");
@@ -65,18 +65,18 @@
 			output.onload = function() {
 				URL.revokeObjectURL(output.src);
 			};*/
-			
+
 			var _image = document.createElement('img');
 			_image.setAttribute("class", "output");
 			_image.src = addImage.value;
 			loadFile(_image);
 			newBook.appendChild(_image);
-			
+
 			//put author name in block
 			var authorName = document.createElement("p");
 			authorName.setAttribute("class", "aName");
 			newBook.appendChild(authorName);
-			
+
 			//put author name, book name, and price in paragraph
 			var authorNameH3 = document.createElement("h3");
 			authorNameH3.setAttribute("class", "author");
@@ -91,12 +91,12 @@
 			var price = document.createElement("p");
 			price.setAttribute("class", "money");
 			newBook.appendChild(price);
-			
+
 			var priceH4 = document.createElement("h4");
 			priceH4.setAttribute("class", "price");
 			price.appendChild(priceH4);
 			(!addPrice.value)? priceH4.innerText = 999 : priceH4.innerText = addPrice.value;
-			
+
 			//add buttons add and delete
 			var buttonAddBook = document.createElement("input");
 			buttonAddBook.setAttribute("type", "button");
@@ -105,7 +105,7 @@
 			buttonAddBook.setAttribute("onclick", "addBook()");
 			buttonAddBook.style.marginRight = 4 + "px";
 			newBook.appendChild(buttonAddBook);
-			
+
 			//delete button
 			var buttonDeleteBook = document.createElement("input");
 			buttonDeleteBook.setAttribute("type", "button");
@@ -113,7 +113,7 @@
 			buttonDeleteBook.setAttribute("class", "deleteBookToCart");
 			buttonDeleteBook.setAttribute("onclick", "deleteBook()");
 			newBook.appendChild(buttonDeleteBook);
-			
+
 			//close modal when add
 			closeModal();
-		}
+		} 
