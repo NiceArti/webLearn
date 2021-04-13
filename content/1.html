@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+	<title>Margaret Mitchell</title>
+	<meta charset="utf-8" name="viewport" lang="en" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="../img/logo.jpg">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../style/style.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+	<!---script src="../script/script.js"></script--->
+</head>
+<body>
+	<header id="pageHead">
+		<h3><em>Либрария</em></h3>
+		<ul id="navMenu">
+			<li><a href="../navigation/register/index.html"><i class="fa fa-user-circle" aria-hidden="true"style="font-size: 2em;"></i></a></li>
+			<li><a href="#">Main</a></li>
+			<li><a href="../navigation/visitors.html">Visitors</a></li>
+			<li><a href="../navigation/cards.html">Cards</a></li>
+			<li><a href="../navigation/statistic.html">Statistic</a></li>
+		</ul>
+		<form name="f1">
+			<input type="text" name="searchBar" id="searchBar" placeholder="Find any book by name or author..." onkeyup="searchFunction()">
+			<i class="fa fa-search" name="searchIco" id="searchIco" onclick="showSearchBar()"></i>
+			<i class="fa fa-bars" name="navBars" id="navBars" onclick="showNavBars()"></i>
+			<select id="langChange" onchange="location = this.value;">
+				<option value="#">EN</option>
+				<option value="../languages/ro/ro.html">RO</option>
+				<option value="../languages/ru/ru.html">RU</option>
+			</select>
+		</form>
+	</header>
+	<article id="mainArticle">
+		<div id="content">
+            <!----------------------------------------------->
+            <div class="content-page-left" id="left">
+                <img src="../img/1.jpg">
+                <p align="center" style="font-size:1.5em;">Margaret Mitchell</p>
+            </div>
+
+            <!----------------------------------------------->
+            <div class="content-page-right" id="right">
+                <p>
+                    Lorem Ipsum is simply dummy text of 
+                    the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's 
+                    standard dummy text ever since the 
+                    1500s, when an unknown printer took a 
+                    galley of type and scrambled it to make a 
+                    type specimen book. 
+                </p>
+                <br>
+                <p>
+                    It is a long established fact that a reader will be distracted by the readable content of a page when 
+                    looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution 
+                    of letters, as opposed to using 'Content here, content here', making it look like readable English. Many 
+                    desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a 
+                    search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved 
+                    over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                </p>
+				<br><br><br>
+
+            </div>
+        </div>
+	</article>
+	<footer id="pageFooter">
+		<br>
+		<p>&copy; Kravcenko Nikita</p>
+		<hr width="20%" color="black">
+	</footer>
+</body>
+</html>
