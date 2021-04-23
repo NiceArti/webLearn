@@ -1,15 +1,15 @@
-<style>
-.output
-{
-	width:100px;
-	height:100px;
-}
-
-</style>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<style>
+	.output
+	{
+		width:100px;
+		height:100px;
+	}
+	</style>
+</head>
 <body>
-	<div id="bodddy">
-		<input type="file" accept="image/*" onchange="loadFile(event)">
-	</div>
+
 	<div class="hello"></div>
 	<script>
 		var loadFile = function(event) 
@@ -25,6 +25,7 @@
 			output.src = URL.createObjectURL(event.target.files[0]);
 			output.onload = function() { URL.revokeObjectURL(output.src); };
 		};
+<<<<<<< HEAD
 
 
 		var myBlob = new Blob(["Hello World"], {type: 'text/plain'});
@@ -35,4 +36,61 @@
 
 
 
+=======
+		
+		$(function () {
+        $(":file").change(function () {
+            if (this.files && this.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = imageIsLoaded;
+                reader.readAsDataURL(this.files[0]);
+            }
+			});
+		});
+		
+		function imageIsLoaded(e) {
+			$('#myNewImg').attr('src', e.target.result);
+		};
+		
+		
+		
+		/*var el = document.querySelector(':file');
+
+			function onDragEnter(e) {
+				e.stopPropagation();
+				e.preventDefault();
+			}
+
+			function onDragOver(e) {
+				e.stopPropagation();
+				e.preventDefault();
+			}
+
+			function onDragLeave(e) {
+				e.stopPropagation();
+				e.preventDefault();
+			}
+
+			function onDrop(e) {
+				e.stopPropagation();
+				e.preventDefault();
+				setFiles(e.dataTransfer.files);
+				return false;
+			}
+
+			el.addEventListener('dragenter', onDragEnter, false);
+			el.addEventListener('dragover', onDragOver, false);
+			el.addEventListener('dragleave', onDragLeave, false);
+			el.addEventListener('drop', onDrop, false);
+
+			function setFiles(files){
+				//Here you have your files
+			}*/
+	</script>
+	<img id="myNewImg" src="#" alt="your image" style="overflow:hidden; width:30px; heigth:60px;">
+	<input type='file' />
+	<input type='button' onclick="console.log(myNewImg.src)"/>
+	</br>
+>>>>>>> 74303cd (adding finally function to add images)
 </body>

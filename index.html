@@ -6,7 +6,9 @@
 	<link rel="shortcut icon" href="img/logo.jpg">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="script/script.js"></script>
+	
 </head>
 <body>
 	<header id="pageHead">
@@ -56,15 +58,36 @@
 					<input type="button" value="add book" class="addBookToCart" onclick="addBook()">
 					<input type="button" value="delete book" class="deleteBookToCart" onclick="deleteBook()">
 				</div>
+				
+				<script>
+					$(function () {
+						$(":file").change(function () {
+							if (this.files && this.files[0]) {
+							var reader = new FileReader();
+
+							reader.onload = imageIsLoaded;
+							reader.readAsDataURL(this.files[0]);
+						}
+						});
+					});
+				
+					function imageIsLoaded(e) {
+						myNewImg.style.display = "block";
+						$('#myNewImg').attr('src', e.target.result);
+					}
+				</script>
+				
+				
 				<div id="modal">
 					<div id="intoModal">
 						<i class="fa fa-close" id="closeModal" onclick="closeModal()"></i><br>
-						<input type="file" value="add image for book" accept=".jpg, .jpeg, .png" name="addImage" id="addImage" onchange="loadFile(event)" multiple><!--accept="image/*"-->
-						<label for="addImage" id="addImageLabel">add image for book</label><br>
+						<img id="myNewImg" src=" " alt="your image" style="display:none;">
+						<input type="file" value="add image for book" name="addImage" id="addImage" multiple><!--accept="image/*"-->
+						<!---label for="addImage" id="addImageLabel">add image for book</label--><br>
 						<input type="text" placeholder="Author name" name="addAuthorName" id="addAuthorName"><br>
 						<input type="text" placeholder="Book name" name="addBookName" id="addBookName"><br>
 						<input type="text" placeholder="Price" name="addPrice" id="addPrice"><br>
-						<input type="button" value="Add" id="addModal" onclick="addNewBook()">
+						<input type="button" value="Add" id="addModal" onclick="addNewBook(this)">
 					</div>
 				</div>
 				

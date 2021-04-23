@@ -13,6 +13,11 @@
 			}
 		}
 		
+		
+		
+		
+	
+		
 		//mobile version of search bar
 		function showSearchBar(){	
 			(searchBar.style.display == "block") ? searchBar.style.display = "none" : searchBar.style.display = "block";
@@ -44,16 +49,27 @@
 		//open modal when button is clicked
 		function addItem(){ modal.style.display = "block"; }
 		
+<<<<<<< HEAD
 		function loadFile(evt)
 		{
 			console.log(evt.value);
 		}
 
+=======
+		
+		
+		
+		
+		
+		
+		
+>>>>>>> 74303cd (adding finally function to add images)
 		//add new book when modal is complete
-		function addNewBook(){
+		function addNewBook(e){
 			//create block
 			var newBook = document.createElement("div");
 			newBook.setAttribute("class", "books");
+<<<<<<< HEAD
 			content.appendChild(newBook);
 
 			//add image	
@@ -66,12 +82,23 @@
 				URL.revokeObjectURL(output.src);
 			};*/
 
+=======
+			
+			
+			//add image	
+>>>>>>> 74303cd (adding finally function to add images)
 			var _image = document.createElement('img');
 			_image.setAttribute("class", "output");
-			_image.src = addImage.value;
-			loadFile(_image);
+			_image.setAttribute("src", "#");	
+			_image.src = myNewImg.src;
+			content.appendChild(newBook);
 			newBook.appendChild(_image);
+<<<<<<< HEAD
 
+=======
+			
+			
+>>>>>>> 74303cd (adding finally function to add images)
 			//put author name in block
 			var authorName = document.createElement("p");
 			authorName.setAttribute("class", "aName");
@@ -116,4 +143,14 @@
 
 			//close modal when add
 			closeModal();
+<<<<<<< HEAD
 		} 
+=======
+		}
+		
+	
+		
+		
+		
+		
+>>>>>>> 74303cd (adding finally function to add images)
